@@ -3,3 +3,18 @@
 @plugin "flowbite/plugin";
 @source "../node_modules/flowbite";
 @import 'tailwindcss';
+
+::selection {
+  background-color: #F97316;
+  color: white;
+}
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  border-radius: 9999px;
+  background: rgba(249, 115, 22, 0.08);
+  color: #d4d4d4;
+}
