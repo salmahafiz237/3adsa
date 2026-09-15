@@ -18,3 +18,18 @@
   background: rgba(249, 115, 22, 0.08);
   color: #d4d4d4;
 }
+.glass-card {
+  background: rgba(22, 22, 22, 0.7);
+  border: 1px solid #262626;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+.text-color {
+  color: #F88D1B;
+}
