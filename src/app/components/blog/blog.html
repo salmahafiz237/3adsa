@@ -83,7 +83,7 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                @for (post of displayedPosts; track post.id; let i = $index) {
+                @for (post of displayedPosts; track post.id;) {
                 <article class="group card overflow-hidden" style="animation-delay: 0ms;">
                     <a class="block" [routerLink]="['/card-details/', post.slug]">
                         <div class="relative h-52 overflow-hidden">
