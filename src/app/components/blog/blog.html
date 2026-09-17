@@ -38,26 +38,25 @@
                             <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-500"></i>
                     </div>
                     <div class="flex flex-wrap justify-center gap-2">
-                        <button class="px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-linear-to-r from-orange-500 to-orange-600 text-white">جميع
-                            المقالات
+                        <button (click)="selectCategory(null)" [class.bg-linear-to-r]="selectedCategory === null"
+                            [class.from-orange-500]="selectedCategory === null" [class.to-orange-600]="selectedCategory === null"
+                            [class.text-white]="selectedCategory === null" [class.bg-[#161616]]="selectedCategory !== null"
+                            [class.text-neutral-400]="selectedCategory !== null" [class.border]="selectedCategory !== null"
+                            [class.border-[#262626]]="selectedCategory !== null"
+                            class="px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 hover:border-orange-500/30">
+                            جميع المقالات
                         </button>
-
-                        <button class="px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-[#161616] text-neutral-400 border border-[#262626] hover:border-orange-500/30">إضاءة
+                    
+                        @for (cat of categoriesList; track cat.name) {
+                        <button (click)="selectCategory(cat.name)" [class.bg-linear-to-r]="selectedCategory === cat.name"
+                            [class.from-orange-500]="selectedCategory === cat.name" [class.to-orange-600]="selectedCategory === cat.name"
+                            [class.text-white]="selectedCategory === cat.name" [class.bg-[#161616]]="selectedCategory !== cat.name"
+                            [class.text-neutral-400]="selectedCategory !== cat.name" [class.border]="selectedCategory !== cat.name"
+                            [class.border-[#262626]]="selectedCategory !== cat.name"
+                            class="px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 hover:border-orange-500/30">
+                            {{ cat.name }}
                         </button>
-
-                        <button class="px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-[#161616] text-neutral-400 border border-[#262626] hover:border-orange-500/30">بورتريه
-                        </button>
-                        
-                        <button class="px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-[#161616] text-neutral-400 border border-[#262626] hover:border-orange-500/30">مناظر
-                            طبيعية
-                        </button>
-                        
-                        <button class="px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-[#161616] text-neutral-400 border border-[#262626] hover:border-orange-500/30">تقنيات
-                        </button>
-                        
-                        <button
-                            class="px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-[#161616] text-neutral-400 border border-[#262626] hover:border-orange-500/30">معدات
-                        </button>
+                        }              
                     </div>
                 </div>
             </div>
@@ -66,7 +65,7 @@
         <!--cards section-->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 scroll-mt-36.5">
             <div class="mb-8 flex items-center justify-between">
-                <p class="text-neutral-400">عرض <span class="font-bold text-white">28</span> مقالات</p>
+                <p class="text-neutral-400">عرض <span class="font-bold text-white">{{ displayedPosts.length }}</span> مقالات</p>
                 <div class="flex items-center gap-2">
                     <div class="flex items-center bg-[#161616] border border-[#262626] rounded-lg p-1">
                         <button
@@ -84,9 +83,9 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                @for (post of postsList; track post.id; let i = $index) {
+                @for (post of displayedPosts; track post.id; let i = $index) {
                 <article class="group card overflow-hidden" style="animation-delay: 0ms;">
-                    <a class="block" [routerLink]="['/blog', post.slug]">
+                    <a class="block" [routerLink]="['/card-details/', post.slug]">
                         <div class="relative h-52 overflow-hidden">
                             <img [src]="post.image" [alt]="post.title"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">

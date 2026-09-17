@@ -9,6 +9,10 @@ import { RouterLink } from '@angular/router';
   styleUrl: './blog.css',
 })
 export class Blog {
+  
+  //======================= filtering state =======================
+  selectedCategory: string | null = null;
+
   //======================= postsList array //=======================
   postsList:Posts[]= [
         {
@@ -569,4 +573,22 @@ export class Blog {
         
       }
     };
+
+    //======================= filtering logic =======================
+  get filteredPosts(): Posts[] {
+    if (!this.selectedCategory) {
+      return this.postsList;
+    }
+    return this.postsList.filter(post => post.category === this.selectedCategory);
+  }
+
+  get displayedPosts(): Posts[] {
+    const limit = this.selectedCategory ? 3 : 6;
+    return this.filteredPosts.slice(0, limit);
+  }
+
+  selectCategory(category: string | null) {
+    this.selectedCategory = category;
+  }
 }
+
