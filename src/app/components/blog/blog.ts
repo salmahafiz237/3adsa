@@ -1,15 +1,10 @@
 import { Component } from '@angular/core';
 import { Categories, Posts, SiteInfo } from '../../interface/posts';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { Light } from './light/light';
-import { Equipments } from './equipments/equipments';
-import { Natural } from './natural/natural';
-import { Portrait } from './portrait/portrait';
-import { Technologies } from './technologies/technologies';
 
 @Component({
   selector: 'app-blog',
-  imports: [RouterLink,Light,Equipments,Natural,Portrait,Technologies,RouterOutlet],
+  imports: [RouterLink, RouterOutlet, ],
   templateUrl: './blog.html',
   styleUrl: './blog.css',
 })
@@ -556,11 +551,11 @@ export class Blog {
 
   //======================= categoriesList array //=======================
       categoriesList:Categories[]=[
-        { "name": "إضاءة", "count": 3, "color": "emerald", icon: 'fa-sun' },
-        { "name": "بورتريه", "count": 3, "color": "purple" , icon: 'fa-user'},
-        { "name": "مناظر طبيعية", "count": 2, "color": "blue" , icon: 'fa-mountain-sun'},
-        { "name": "تقنيات", "count": 5, "color": "orange", icon: 'fa-sliders'  },
-        { "name": "معدات", "count": 3, "color": "emerald", icon: 'fa-camera' }
+        { "name": "إضاءة", "count": 3, "color": "emerald", icon: 'fa-sun', category:'light' },
+        { "name": "بورتريه", "count": 3, "color": "purple" , icon: 'fa-user', category:'portrait'},
+        { "name": "مناظر طبيعية", "count": 2, "color": "blue" , icon: 'fa-mountain-sun', category:'natural'},
+        { "name": "تقنيات", "count": 5, "color": "orange", icon: 'fa-sliders' , category:'technologies' },
+        { "name": "معدات", "count": 3, "color": "emerald", icon: 'fa-camera', category:'equipments' }
       ]
 
 

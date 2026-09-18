@@ -37,27 +37,25 @@
                             class="rounded-lg border-[#262626] bg-[#161616] w-full px-5 py-3 pr-12" type="text" value="">
                             <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-500"></i>
                     </div>
-                    <div class="flex flex-wrap justify-center gap-2">
+                    <div class="flex flex-wrap justify-start gap-2 md:mr-auto">
+
                         <button (click)="selectCategory(null)" [class.bg-linear-to-r]="selectedCategory === null"
                             [class.from-orange-500]="selectedCategory === null" [class.to-orange-600]="selectedCategory === null"
-                            [class.text-white]="selectedCategory === null" [class.bg-[#161616]]="selectedCategory !== null"
-                            [class.text-neutral-400]="selectedCategory !== null" [class.border]="selectedCategory !== null"
-                            [class.border-[#262626]]="selectedCategory !== null"
-                            class="px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 hover:border-orange-500/30">
+                            [class.text-white]="selectedCategory === null"
+                            class="px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-[#161616] text-neutral-400 border border-[#262626] hover:border-orange-500/35">
                             جميع المقالات
                         </button>
                     
                         @for (cat of categoriesList; track cat.name) {
                         <button (click)="selectCategory(cat.name)" [class.bg-linear-to-r]="selectedCategory === cat.name"
                             [class.from-orange-500]="selectedCategory === cat.name" [class.to-orange-600]="selectedCategory === cat.name"
-                            [class.text-white]="selectedCategory === cat.name" [class.bg-[#161616]]="selectedCategory !== cat.name"
-                            [class.text-neutral-400]="selectedCategory !== cat.name" [class.border]="selectedCategory !== cat.name"
-                            [class.border-[#262626]]="selectedCategory !== cat.name"
-                            class="px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 hover:border-orange-500/30">
+                            [class.text-white]="selectedCategory === cat.name"
+                            class="px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-[#161616] text-neutral-400 border border-[#262626] hover:border-orange-500/30 flex items-center gap-2">
                             {{ cat.name }}
                         </button>
-                        }              
+                        }
                     </div>
+                    <router-outlet></router-outlet>
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@ export interface Posts {
         title: string,
         excerpt:string,
         content:string,
-        category: string,
+        category?: string,
 
         author: authorPost,
         image:string,
@@ -25,6 +25,7 @@ export interface Categories{
     count: number,
     color: string, 
     icon: string;
+    category:string,
 }
 
 export interface SiteInfo{

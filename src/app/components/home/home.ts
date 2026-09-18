@@ -550,13 +550,13 @@ export class Home {
       ]
 
   //======================= categoriesList array //=======================
-      categoriesList:Categories[]=[
-        { "name": "إضاءة", "count": 3, "color": "emerald", icon: 'fa-sun' },
-        { "name": "بورتريه", "count": 3, "color": "purple" , icon: 'fa-user'},
-        { "name": "مناظر طبيعية", "count": 2, "color": "blue" , icon: 'fa-mountain-sun'},
-        { "name": "تقنيات", "count": 5, "color": "orange", icon: 'fa-sliders'  },
-        { "name": "معدات", "count": 3, "color": "emerald", icon: 'fa-camera' }
-      ]
+  categoriesList: Categories[] = [
+    { name: "إضاءة", count: 3, color: "emerald", icon: 'fa-sun', category: 'light' },
+    { name: "بورتريه", count: 3, color: "purple", icon: 'fa-user', category: 'portrait' },
+    { name: "مناظر طبيعية", count: 2, color: "blue", icon: 'fa-mountain-sun', category: 'natural' },
+    { name: "تقنيات", count: 5, color: "orange", icon: 'fa-sliders', category: 'technologies' },
+    { name: "معدات", count: 3, color: "emerald", icon: 'fa-camera', category: 'equipments' }
+];
 
 
     //======================= siteInfo object //=======================
