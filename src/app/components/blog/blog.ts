@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
 import { Categories, Posts, SiteInfo } from '../../interface/posts';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { Light } from './light/light';
+import { Equipments } from './equipments/equipments';
+import { Natural } from './natural/natural';
+import { Portrait } from './portrait/portrait';
+import { Technologies } from './technologies/technologies';
 
 @Component({
   selector: 'app-blog',
-  imports: [RouterLink],
+  imports: [RouterLink,Light,Equipments,Natural,Portrait,Technologies,RouterOutlet],
   templateUrl: './blog.html',
   styleUrl: './blog.css',
 })
