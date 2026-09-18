@@ -10,6 +10,9 @@ import { Categories, Posts, SiteInfo } from '../../interface/posts';
 })
 export class Home {
 
+  //======================= filtering state =======================
+    selectedCategory: string | null = null;
+
   //======================= postsList array //=======================
   postsList:Posts[]= [
         {
@@ -570,4 +573,13 @@ export class Home {
         
       }
     };
+
+    //======================= featured & latest posts =======================
+  get featuredPosts(): Posts[] {
+    return this.postsList.filter(post => post.featured).slice(0, 3);
+  }
+
+  get latestPosts(): Posts[] {
+    return this.postsList.slice(0, 3);
+  }
   }

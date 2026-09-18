@@ -590,5 +590,12 @@ export class Blog {
   selectCategory(category: string | null) {
     this.selectedCategory = category;
   }
+
+  //======================= view mode state =======================
+  viewMode: 'grid' | 'list' = 'grid';
+
+  setViewMode(mode: 'grid' | 'list') {
+    this.viewMode = mode;
+  }
 }
 

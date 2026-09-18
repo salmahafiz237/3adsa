@@ -42,7 +42,7 @@
                         <span>استكشف المقالات</span>
                         <i class="fa-solid fa-arrow-right w-5 h-5 group-hover:-translate-x-1 transition-transform rotate-180"></i>
                     </a>
-                    <a class="btn-secondary inline-flex rounded-4xl items-center justify-center gap-2" href="/about"
+                    <a class="btn-secondary inline-flex rounded-4xl items-center justify-center gap-2" routerLink="/about"
                         data-discover="true">
                         <i class="fa-solid fa-circle-info"></i>
                         <span>اعرف المزيد</span>
@@ -105,11 +105,11 @@
             </div>
 
             <div class="space-y-8">
-                @for (post of postsList; track post.id;) {
+                @for (post of featuredPosts; track post.id;) {
                     <article
                         class="group relative bg-[#161616] rounded-3xl overflow-hidden border border-[#262626] hover:border-orange-500/30 transition-all duration-500"
                         style="animation-delay: 0ms;">
-                        <a class="block" href="/blog/mastering-golden-hour-photography" data-discover="true">
+                        <a class="block" [routerLink]="['/blog', post.slug]">
                             <div class="grid md:grid-cols-2 gap-0">
                                 <div class="relative h-72 md:h-100 overflow-hidden">
                                     <img [src]="post.image" [alt]="post.title"
@@ -298,7 +298,7 @@
                     <p class="section-subtitle max-w-lg">محتوى جديد طازج من المطبعة</p>
                 </div><a
                     class="group inline-flex items-center gap-2 text-orange-500 font-semibold hover:text-orange-400 transition-colors"
-                    href="/blog" data-discover="true">عرض جميع المقالات<svg
+                    routerLink="/blog" data-discover="true">عرض جميع المقالات<svg
                         class="w-5 h-5 group-hover:-translate-x-1 transition-transform rotate-180" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -307,7 +307,7 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                @for (post of postsList; track post.id;) {
+                @for (post of latestPosts; track post.id;) {
                     <article class="group card overflow-hidden" style="animation-delay: 0ms;">
                         <a class="block" [routerLink]="['/blog', post.slug]">
                         <div class="relative h-52 overflow-hidden">

@@ -26,17 +26,17 @@
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center">
                 <div class="flex items-center bg-[#161616] rounded-full p-1.5 border border-[#262626]">
-                    <a routerLink="home"
-                        class="px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 bg-linear-to-r from-orange-500 to-orange-600 text-white">
+                    <a routerLink="/home" routerLinkActive="bg-linear-to-r from-orange-500 to-orange-600 text-white"
+                        class="px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 text-neutral-400 hover:text-white">
                         الرئيسية
                     </a>
-
-                    <a routerLink="blog"
+                    
+                    <a routerLink="/blog" routerLinkActive="bg-linear-to-r from-orange-500 to-orange-600 text-white"
                         class="px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 text-neutral-400 hover:text-white">
                         المدونة
                     </a>
-
-                    <a routerLink="about"
+                    
+                    <a routerLink="/about" routerLinkActive="bg-linear-to-r from-orange-500 to-orange-600 text-white"
                         class="px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 text-neutral-400 hover:text-white">
                         من نحن
                     </a>
@@ -68,17 +68,20 @@
             <div class="bg-[#161616] backdrop-blur-xl rounded-2xl p-4 border border-[#262626] mb-4">
                 <div class="flex flex-col space-y-1">
 
-                    <a routerLink="home"
-                        class="px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 bg-orange-500/10 text-orange-500 border border-orange-500/30">
+                    <a routerLink="/home" routerLinkActive="bg-[#3a2115] text-orange-500 border border-orange-500/30"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        class="px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 text-neutral-400 hover:bg-[#1a1a1a] hover:text-white">
                         الرئيسية
                     </a>
-
-                    <a routerLink="/blog"
+                    
+                    <a routerLink="/blog" routerLinkActive="bg-[#3a2115] text-orange-500 border border-orange-500/30"
+                        [routerLinkActiveOptions]="{ exact: true }"
                         class="px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 text-neutral-400 hover:bg-[#1a1a1a] hover:text-white">
                         المدونة
                     </a>
-
-                    <a routerLink="/about"
+                    
+                    <a routerLink="/about" routerLinkActive="bg-[#3a2115] text-orange-500 border border-orange-500/30"
+                        [routerLinkActiveOptions]="{ exact: true }"
                         class="px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 text-neutral-400 hover:bg-[#1a1a1a] hover:text-white">
                         من نحن
                     </a>

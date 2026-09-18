@@ -10,11 +10,15 @@ import { CardDetails } from './components/card-details/card-details';
 export const routes: Routes = [
     {path:'', redirectTo:'home', pathMatch:'full'},
     {path:"home", component:Home, title:'الرئيسية'},
-    {path:"blog", component:Blog, title:'المدونة'},
+    {path: 'blog',
+        children: [
+            { path: '', component: Blog, title: 'المدونة' },
+            { path: ':slug', component: CardDetails },
+        ]
+    },
     {path:"about", component:About, title:'من نحن'},
     {path:'privacy-policy', component:PrivacyPolicy, title:'سياسة الخصوصية'},
     {path: 'terms-of-service', component:TermsOfService, title:'شروط الخدمة'},
-    {path: 'card-details', component:CardDetails, title:'المدونة'},
     {path:'not-found', component:NotFound, title:'حدث خطأ'},
     {path:'**', redirectTo:'not-found', pathMatch:'full'},
 ];
